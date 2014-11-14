@@ -13,7 +13,7 @@ program
     .option('-d, --dest <file>', 'Minified file name/location (optional: defaults to <file>.min.<extension>)')
     .parse(process.argv);
 
-var file = program.file || '';
+var file = program.file || process.argv[2] || '';
 var doWrite = program.write;
 var extension = file.split('.').slice(-1)[0].toLowerCase();
 var output = program.dest || file.slice(0, -1 * extension.length) + 'min.' + extension;
