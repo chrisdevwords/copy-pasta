@@ -5,11 +5,8 @@ copy-pasta
 Command line tool for copying minified contents of files.
 
 ## usage
-
-1. Clone the repo.
-2. run npm link
-3. in the terminal:
 ```
+npm install copy-pasta
 copy-pasta path/to/my/file.ext
 ```
 

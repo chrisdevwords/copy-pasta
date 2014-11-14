@@ -1,6 +1,6 @@
 {
   "name": "copy-pasta",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Command line tool for copying minified contents of files to the file system clipboard.",
   "main": "index.js",
   "scripts": {
