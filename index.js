@@ -37,6 +37,13 @@ switch (extension) {
             }
         });
     break;
+    default:
+        if(!file.length) {
+            console.log('No input file specified. See', pkg.name,'-h for usage.')
+        } else {
+            console.log('Invalid file extension:',extension);
+        }
+    break;
 }
 
 
