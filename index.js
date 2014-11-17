@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 var path = require('path');
-var fs = require('fs');
-var minify = require('minify');
-var copyPaste = require("copy-paste");
 var program = require('commander');
 var pkg = require(path.join(__dirname, 'package.json'));
+var CopyPasta = require('./lib/copy-pasta');
 
 program
     .version(pkg.version)
@@ -14,36 +12,9 @@ program
     .parse(process.argv);
 
 var file = program.file || process.argv[2] || '';
-var doWrite = program.write;
 var extension = file.split('.').slice(-1)[0].toLowerCase();
 var output = program.dest || file.slice(0, -1 * extension.length) + 'min.' + extension;
+module.exports = new CopyPasta(file, extension, (program.dest || program.write) ? output : null);
 
-switch (extension) {
-    case "js":
-    case "css":
-        minify(file, {returnStream  : true}, function(error, stream) {
-            if (doWrite) {
-                fs.createWriteStream(output);
-            }
-            if (error) {
-                console.log(error.message);
-            } else {
-                copyPaste.copy(stream, function() {
-                    console.log('Copied minified file', file, 'to clipboard.');
-                    if(doWrite){
-                        console.log('Output saved to', output);
-                    }
-                });
-            }
-        });
-    break;
-    default:
-        if(!file.length) {
-            console.log('No input file specified. See', pkg.name,'-h for usage.')
-        } else {
-            console.log('Invalid file extension:',extension);
-        }
-    break;
-}
 
 
