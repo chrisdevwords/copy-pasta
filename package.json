@@ -28,7 +28,10 @@
     "minify": "~1.3.0",
     "copy-paste": "~1.0.1",
     "node-sass": "~1.2.2",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "vinyl-fs": "~0.3.13",
+    "map-stream": "0.0.5",
+    "vinyl": "~0.4.5"
   },
   "preferGlobal": "true",
   "bin": {
