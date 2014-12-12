@@ -15,7 +15,11 @@ copy-pasta path/to/my/file.ext
 copy-pasta -h
 ```
 
+Partial support for watching the file, writing on save.
+```
+copy-pasta myFile.js -l
+```
+
 ## Todos
 1. by default loop over every .js file in the directory and copy/minify all to one file/clipboard glob
 2. multi-file sass support
-3. watch file, copy on save?
