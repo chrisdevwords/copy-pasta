@@ -25,6 +25,5 @@ copy-pasta myFile.js -l
 2. multi-file, directory/glob watch/compile
 3. js linting
 
-// make sure file exists
 // debug off if not in dev environment or passed via flag
 // no minify flag
