@@ -10,6 +10,7 @@ program
     .option('-w, --write', 'Write a minified file to the file system.')
     .option('-d, --dest <file>', 'Minified file name/location (optional: defaults to <file>.min.<extension>)')
     .option('-l, --listen', 'Watch the file for updates. Minify and/or copy to clipboard on change.')
+    .option('-x --debug', 'Debug mode. See extra console log information.')
     .parse(process.argv);
 
 var file = program.file || process.argv[2] || '';
@@ -19,5 +20,6 @@ module.exports = new CopyPasta(
     file,
     extension,
     (program.dest || program.write) ? output : null,
-    program.listen
+    program.listen,
+    program.debug
 );
