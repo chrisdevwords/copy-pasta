@@ -21,5 +21,6 @@ copy-pasta myFile.js -l
 ```
 
 ## Todos
-1. by default loop over every .js file in the directory and copy/minify all to one file/clipboard glob
-2. multi-file sass support
+1. refactor to use vinyl
+2. multi-file, directory/glob watch/compile
+3. js linting
