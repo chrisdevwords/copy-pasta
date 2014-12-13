@@ -21,6 +21,3 @@ module.exports = new CopyPasta(
     (program.dest || program.write) ? output : null,
     program.listen
 );
-
-
-
